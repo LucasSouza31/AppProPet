@@ -21,7 +21,7 @@ public class AnimalEstimacao {
 
     private String dataNascimentoPet;
 
-    @OneToOne//??
+   @OneToOne(mappedBy = "animalEstimacao")
     private CartaoVacinaPet cartaoVacina;
 
     private TipoAnimal tipoAnimal;

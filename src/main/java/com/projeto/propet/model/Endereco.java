@@ -30,7 +30,7 @@ public class Endereco {
 
     private String cepRua;
 
-    @OneToMany (mappedBy ="endereco")    
+    @OneToMany (mappedBy ="enderecoProprietario")    
     private List<Proprietario> proprietarios;
 
 

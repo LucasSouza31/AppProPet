@@ -32,7 +32,7 @@ public class Proprietario {
     @JoinColumn(name="endereco_id")
     private Endereco enderecoProprietario;
 
-    @OneToMany(mappedBy="proprietario")    
+    @OneToMany(mappedBy="proprietarioPet")    
     private List <AnimalEstimacao> petsProprietario;
 
     
