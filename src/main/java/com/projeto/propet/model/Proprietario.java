@@ -8,9 +8,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "proprietario")
 public class Proprietario {
@@ -35,69 +43,6 @@ public class Proprietario {
     @OneToMany(mappedBy="proprietarioPet")    
     private List <AnimalEstimacao> petsProprietario;
 
-    
-
-    public Proprietario() {
-    }
-
-    public Proprietario(String nomeProprietario, String sobrenomeProrpietario, String dDDTelefoneProprietario,
-            String telefoneProprietario, Endereco enderecoProprietario, List<AnimalEstimacao> petsProprietario) {
-        this.nomeProprietario = nomeProprietario;
-        this.sobrenomeProrpietario = sobrenomeProrpietario;
-        DDDTelefoneProprietario = dDDTelefoneProprietario;
-        this.telefoneProprietario = telefoneProprietario;
-        this.enderecoProprietario = enderecoProprietario;
-        this.petsProprietario = petsProprietario;
-    }
-    
-
-    public String getNomeProprietario() {
-        return nomeProprietario;
-    }
-
-    public void setNomeProprietario(String nomeProprietario) {
-        this.nomeProprietario = nomeProprietario;
-    }
-
-    public String getSobrenomeProrpietario() {
-        return sobrenomeProrpietario;
-    }
-
-    public void setSobrenomeProrpietario(String sobrenomeProrpietario) {
-        this.sobrenomeProrpietario = sobrenomeProrpietario;
-    }
-
-    public String getDDDTelefoneProprietario() {
-        return DDDTelefoneProprietario;
-    }
-
-    public void setDDDTelefoneProprietario(String dDDTelefoneProprietario) {
-        DDDTelefoneProprietario = dDDTelefoneProprietario;
-    }
-
-    public String getTelefoneProprietario() {
-        return telefoneProprietario;
-    }
-
-    public void setTelefoneProprietario(String telefoneProprietario) {
-        this.telefoneProprietario = telefoneProprietario;
-    }
-
-    public Endereco getEnderecoProprietario() {
-        return enderecoProprietario;
-    }
-
-    public void setEnderecoProprietario(Endereco enderecoProprietario) {
-        this.enderecoProprietario = enderecoProprietario;
-    }
-
-    public List<AnimalEstimacao> getPetsProprietario() {
-        return petsProprietario;
-    }
-
-    public void setPetsProprietario(List<AnimalEstimacao> petsProprietario) {
-        this.petsProprietario = petsProprietario;
-    }
 
     
 }

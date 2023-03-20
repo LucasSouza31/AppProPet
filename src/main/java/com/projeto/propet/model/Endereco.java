@@ -8,7 +8,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "endereco")
 public class Endereco {
@@ -35,60 +43,5 @@ public class Endereco {
 
 
     
-    public String getNomeRua() {
-        return nomeRua;
-    }
-
-    public void setNomeRua(String nomeRua) {
-        this.nomeRua = nomeRua;
-    }
-
-    public String getNumeroCasa() {
-        return numeroCasa;
-    }
-
-    public void setNumeroCasa(String numeroCasa) {
-        this.numeroCasa = numeroCasa;
-    }
-
-    public String getNomeCidade() {
-        return nomeCidade;
-    }
-
-    public void setNomeCidade(String nomeCidade) {
-        this.nomeCidade = nomeCidade;
-    }
-
-    public String getNomeEstado() {
-        return nomeEstado;
-    }
-
-    public void setNomeEstado(String nomeEstado) {
-        this.nomeEstado = nomeEstado;
-    }
-
-    public String getNomePais() {
-        return nomePais;
-    }
-
-    public void setNomePais(String nomePais) {
-        this.nomePais = nomePais;
-    }
-
-    public String getCepRua() {
-        return cepRua;
-    }
-
-    public void setCepRua(String cepRua) {
-        this.cepRua = cepRua;
-    }
-
-    public List<Proprietario> getProprietarios() {
-        return proprietarios;
-    }
-
-    public void setProprietarios(List<Proprietario> proprietarios) {
-        this.proprietarios = proprietarios;
-    }
     
 }

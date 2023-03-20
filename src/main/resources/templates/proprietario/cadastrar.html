@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragmentos/cabecalho::cabecalho}"></head>
+
+<body>
+
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}"></div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <form class="col-sm-12" th:object="${proprietario}" method="post">
+                <div class="mb-3">
+                  <label for="nomeProprietario" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nomeProprietario" placeholder="Júlio" name="nomeProprietario" th:field="*{nomeProprietario}" >                  
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenomeProrpietario" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobrenomeProrpietario" placeholder="Santos" th:field="*{sobrenomeProrpietario}">                    
+                </div>
+                <div class="mb-3">
+                    <label for="DDDTelefoneProprietario" class="form-label">DDD</label>
+                    <input type="text" class="form-control" id="DDDTelefoneProprietario" placeholder="(75))" th:field="*{DDDTelefoneProprietario}">                    
+                </div>
+                <div class="mb-3">
+                    <label for="telefoneProprietario" class="form-label">Telefone</label>
+                    <input type="text" class="form-control" id="telefoneProprietario" placeholder="9987-9857" th:field="*{telefoneProprietario}">                    
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
