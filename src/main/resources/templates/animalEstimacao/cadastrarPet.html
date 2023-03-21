@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+    <section class="jumbotron">
+        <div class="container mt-5">
+            <h3>Novo Pet</h3>
+    
+            <form  th:object="${animalEstimacao}"  method="post">
+    
+                <div class="row mt-5">
+                    <div class="col col-md-4">
+                        <label for="nomePet" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nomePet" placeholder="Ex: Cenoura"  th:field="*{nomePet}">                    
+                    </div>               
+                    <div class="col-md-auto">
+                            <label for="dataNascimentoPet" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dataNascimentoPet" placeholder="Ex: 29/04/2020" th:field="*{dataNascimentoPet}">                    
+                    </div>
+                    <div class="col-md-auto col-md-4 ">
+                        <label for="tipoAnimal" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="tipoAnimal" placeholder="Ex: Exótico"  th:field="*{tipoAnimal}">                    
+                    </div>
+                    <div class="col-md-auto col-md-4 mt-4">
+                        <label for="raçaAnimal" class="form-label">Raça</label>
+                        <input type="text" class="form-control" id="raçaAnimal" placeholder="Ex: Siamês" th:field="*{raçaAnimal}">                    
+                    </div> 
+  
+                         
+                </div>   
+               
+               <button type="submit" class="btn btn-success mt-4"> Cadastrar </button>
+            </form>
+           
+        </div>
+    
+    </section>
+
+
+
+    
+</body>
+</html>

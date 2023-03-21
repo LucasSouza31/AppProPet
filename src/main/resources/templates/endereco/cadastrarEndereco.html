@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+    <section class="jumbotron">
+        <div class="container mt-5">
+            <h3>Cadastrar Endereço</h3>
+    
+            <form  th:object="${endereco}"  method="post">
+    
+                <div class="row mt-5">
+                    <div class="col col-md-4">
+                        <label for="nomeRua" class="form-label">Rua</label>
+                        <input type="text" class="form-control" id="nomeRua" placeholder="Ex: Rua Santa Mônica"  th:field="*{nomeRua}">                    
+                    </div>               
+                    <div class="col-md-auto">
+                            <label for="numeroCasa" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="numeroCasa" placeholder="Ex: 11" th:field="*{numeroCasa}">                    
+                    </div>
+                    <div class="col-md-auto col-md-4 ">
+                        <label for="nomeCidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="nomeCidade" placeholder="Ex: Santo Antônio"  th:field="*{nomeCidade}">                    
+                    </div>
+                    <div class="col-md-auto col-md-4 mt-4">
+                        <label for="nomeEstado" class="form-label">Estado</label>
+                        <input type="text" class="form-control" id="nomeEstado" placeholder="Ex: Bahia" th:field="*{nomeEstado}">                    
+                    </div> 
+                    <div class="col-md-auto col-md-4 mt-4">
+                        <label for="nomePais" class="form-label">Pais</label>
+                        <input type="text" class="form-control" id="nomePais" placeholder="Ex: Brasil" th:field="*{nomePais}">                    
+                    </div>    
+                    <div class="col-md-auto mt-4">
+                        <label for="cepRua" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="cepRua" placeholder="Ex: 44444-122"  th:field="*{cepRua}">                    
+                    </div>   
+                         
+                </div>   
+               
+               <button type="submit" class="btn btn-success mt-4"> Cadastrar </button>
+            </form>
+           
+        </div>
+    
+    </section>
+
+
+</body>
+</html>
