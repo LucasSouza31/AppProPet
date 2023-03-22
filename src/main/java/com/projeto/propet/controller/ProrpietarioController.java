@@ -1,5 +1,7 @@
 package com.projeto.propet.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +30,18 @@ public class ProrpietarioController {
 
     @PostMapping("/cadastrar")
     public ModelAndView salvarProprietario( Proprietario proprietario) {
-        ModelAndView proprietarioMv= new ModelAndView("redirect:/cadastrar");
+        ModelAndView proprietarioMv= new ModelAndView("redirect:/proprietarios/cadastrar");
         proprietarioService.salvar(proprietario);
      
         return proprietarioMv;
+    }
+
+    @GetMapping("/listar")
+    public ModelAndView listarPropprietarios() {
+        ModelAndView ListarProprietariosMv= new ModelAndView("proprietario/listarProprietario");
+        List<Proprietario> proprietarios= proprietarioService.listar();
+        ListarProprietariosMv.addObject("proprietarios", proprietarios);
+        return ListarProprietariosMv;
     }
     
 

@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html lang="pt-br">
+
+    <head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
 <body>
-    
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+
+    <div class="jumbotrom">
+        <div class="container">
+            <div class="row">
+
+                <table class="table mt-5">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Proprietário</th>
+                        <th scope="col">DDD</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Novo Pet</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr th:each=" proprietario: ${proprietarios}">
+                        <th scope="row" th:text="${proprietario.id}">1</th>
+                        <td th:text="${proprietario.nomeProprietario}">Mark</td>
+                        <td th:text="${proprietario.DDDTelefoneProprietario}">75</td>
+                        <td th:text="${proprietario.telefoneProprietario}">Telefone</td>
+                        <td>                          
+                            <a href="" class="btn btn-primary" role="button">Cadastrar</a>
+                        </td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer th:replace="~{fragmentos/rodape::rodape}">
+        
+    </footer>
+
+  
+
+
 </body>
 </html>
