@@ -13,7 +13,7 @@
             <form  th:object="${animalEstimacao}"  method="post">
     
                 <div class="row mt-5">
-                    
+                    <input type="hidden" th:field="*{proprietarioPet.id}">
 
                     <div class="col col-md-4">
                         <label for="nomePet" class="form-label">Nome</label>

@@ -3,11 +3,14 @@ package com.projeto.propet.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projeto.propet.model.AnimalEstimacao;
+import com.projeto.propet.model.Proprietario;
 import com.projeto.propet.services.AnimalEstimacaoService;
 
 @Controller
@@ -24,13 +27,22 @@ public class AnimalEstimacaoController {
         return cadastrarPetMv;
     }
 
-    @PostMapping("/novoPet")
-    public ModelAndView salvarPet(AnimalEstimacao pet){
-        ModelAndView salvarNovoPetMv = new ModelAndView("redirect:animalEstimacao/cadastrarPet");
-        animalEstimacaoService.salvar(pet);
-        return salvarNovoPetMv;
-    }
+    // @PostMapping("/novoPet")
+    // public ModelAndView salvarPet(AnimalEstimacao pet){
+    //     ModelAndView salvarNovoPetMv = new ModelAndView("redirect:animalEstimacao/cadastrarPet");
+    //     animalEstimacaoService.salvar(pet);
+    //     return salvarNovoPetMv;
+    // }
 
+    @PostMapping("/novoPet")
+    public String salvarPet(@ModelAttribute("animalEstimacao") AnimalEstimacao animalEstimacao, @RequestParam("proprietarioId") Long prorpietarioId){
+        Proprietario proprietarioAnimalEstimacao= new Proprietario();
+        proprietarioAnimalEstimacao.setId(prorpietarioId);
+        animalEstimacao.setProprietarioPet(proprietarioAnimalEstimacao);
+
+        animalEstimacaoService.salvar(animalEstimacao);
+        return "redirect:/";
+    }
 
 
 

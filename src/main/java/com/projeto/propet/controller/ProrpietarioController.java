@@ -43,6 +43,12 @@ public class ProrpietarioController {
         ListarProprietariosMv.addObject("proprietarios", proprietarios);
         return ListarProprietariosMv;
     }
+
+    @GetMapping("/editar")
+    public ModelAndView editarProprietario() {
+        ModelAndView editarProprietarioMv= new ModelAndView("proprietario/editar");
+        return editarProprietarioMv;
+    }
     
 
 }
