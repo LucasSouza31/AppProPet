@@ -14,6 +14,7 @@ public class ProprietarioService {
     @Autowired
     private ProprietarioRepository proprietarioRepository;
 
+  
 
     public void salvar( Proprietario proprietario) {        
         proprietarioRepository.save(proprietario);
