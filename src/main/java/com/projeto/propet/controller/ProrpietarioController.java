@@ -19,6 +19,7 @@ public class ProrpietarioController {
     @Autowired
    private ProprietarioService proprietarioService;
 
+
    
 
     @GetMapping("/cadastrar")
@@ -49,6 +50,7 @@ public class ProrpietarioController {
         ModelAndView editarProprietarioMv= new ModelAndView("proprietario/editar");
         return editarProprietarioMv;
     }
-    
+     
+
 
 }

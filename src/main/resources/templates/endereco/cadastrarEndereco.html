@@ -10,8 +10,12 @@
             <h3>Cadastrar Endereço</h3>
     
             <form  th:object="${endereco}"  method="post">
+                <input type="hidden" th:field="*{id}">
                 
                 <div class="row mt-5">
+                    <div class="mt-4">
+                        <p th:text="${nomeProprietario}">Nome do proprietário</p>
+                    </div>
                     <div class="col col-md-4">
                         <label for="nomeRua" class="form-label">Rua</label>
                         <input type="text" class="form-control" id="nomeRua" placeholder="Ex: Rua Santa Mônica"  th:field="*{nomeRua}">                    

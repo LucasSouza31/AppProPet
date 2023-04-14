@@ -28,7 +28,7 @@
                         <td th:text="${proprietario.DDDTelefoneProprietario}">75</td>
                         <td th:text="${proprietario.telefoneProprietario}">Telefone</td>
                         <td>                          
-                            <a href="" class="btn btn-warning" role="button">Editar</a>
+                            <a th:href="@{/endereco/{id}/cadastrar-endereco (id=${proprietario.id})} " class="btn btn-warning" role="button">Editar</a>
                         </td>                        
                       </tr>
                     </tbody>

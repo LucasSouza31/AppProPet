@@ -1,6 +1,7 @@
 package com.projeto.propet.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,4 +24,10 @@ public class ProprietarioService {
     public List<Proprietario> listar() {        
        return proprietarioRepository.findAll();        
     }
+
+    public Proprietario retornarProprietario(Long id) {
+       return  proprietarioRepository.getReferenceById(id);       
+    }
+
+
 }
