@@ -27,9 +27,15 @@
                         <td th:text="${proprietario.nomeProprietario}">Mark</td>
                         <td th:text="${proprietario.DDDTelefoneProprietario}">75</td>
                         <td th:text="${proprietario.telefoneProprietario}">Telefone</td>
+
                         <td>                          
-                            <a th:href="@{/endereco/{id}/cadastrar-endereco (id=${proprietario.id})} " class="btn btn-warning" role="button">Editar</a>
-                        </td>                        
+                            <a th:href="@{/endereco/{id}/cadastrar-endereco (id=${proprietario.id})} " class="btn btn-warning" role="button">Endereço</a>
+                        </td>    
+
+                        <td>                          
+                          <a th:href="@{/pet/{id}/cadastrar-novoPet(id=${proprietario.id})}" class="btn btn-warning" role="button">Novo Pet</a>
+                        </td>     
+
                       </tr>
                     </tbody>
                   </table>

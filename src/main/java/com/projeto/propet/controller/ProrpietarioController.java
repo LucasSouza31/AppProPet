@@ -18,8 +18,6 @@ public class ProrpietarioController {
     
     @Autowired
    private ProprietarioService proprietarioService;
-
-
    
 
     @GetMapping("/cadastrar")

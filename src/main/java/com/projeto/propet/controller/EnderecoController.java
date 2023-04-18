@@ -25,8 +25,6 @@ public class EnderecoController {
     @Autowired
     private ProprietarioService proprietarioService;
  
-
- 
     @GetMapping("/{id}/cadastrar-endereco")
     public ModelAndView cadastrarEndereco(@PathVariable Long id) {
         ModelAndView cadastrarEnderecoMv= new ModelAndView("endereco/cadastrarEndereco");

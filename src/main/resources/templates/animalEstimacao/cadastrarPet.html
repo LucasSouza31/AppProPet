@@ -10,10 +10,9 @@
         <div class="container mt-5">
             <h3>Novo Pet</h3>
     
-            <form  th:object="${animalEstimacao}"  method="post">
-    
+            <form  th:object="${animalEstimacao}"  method="post">    
                 <div class="row mt-5">
-                    <input type="hidden" th:field="*{proprietarioPet.id}">
+                    <input type="hidden" th:field="*{id}">
 
                     <div class="col col-md-4">
                         <label for="nomePet" class="form-label">Nome</label>
@@ -23,15 +22,14 @@
                             <label for="dataNascimentoPet" class="form-label">Data de Nascimento</label>
                             <input type="date" class="form-control" id="dataNascimentoPet" placeholder="Ex: 29/04/2020" th:field="*{dataNascimentoPet}">                    
                     </div>
-                    <div class="col-md-auto col-md-4 ">
+                    <!-- <div class="col-md-auto col-md-4 ">
                         <label for="tipoAnimal" class="form-label">Tipo</label>
                         <input type="text" class="form-control" id="tipoAnimal" placeholder="Ex: Exótico"  th:field="*{tipoAnimal}">                    
-                    </div>
+                    </div> -->
                     <div class="col-md-auto col-md-4 mt-4">
                         <label for="raçaAnimal" class="form-label">Raça</label>
                         <input type="text" class="form-control" id="raçaAnimal" placeholder="Ex: Siamês" th:field="*{raçaAnimal}">                    
-                    </div> 
-  
+                    </div>   
                          
                 </div>   
                

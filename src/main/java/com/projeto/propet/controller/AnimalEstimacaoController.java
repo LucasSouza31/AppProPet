@@ -3,50 +3,40 @@ package com.projeto.propet.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projeto.propet.model.AnimalEstimacao;
 import com.projeto.propet.model.Proprietario;
 import com.projeto.propet.services.AnimalEstimacaoService;
+import com.projeto.propet.services.ProprietarioService;
 
 @Controller
 @RequestMapping("/pet")
 public class AnimalEstimacaoController {
     
     @Autowired
-    AnimalEstimacaoService animalEstimacaoService;
+    private AnimalEstimacaoService animalEstimacaoService;
+    
+    @Autowired
+    private ProprietarioService proprietarioService;
+ 
 
-    @GetMapping("/novoPet")
-    public ModelAndView cadastrarPet(){
-        ModelAndView cadastrarPetMv = new ModelAndView("animalEstimacao/cadastrarPet");
+    @GetMapping("/{id}/cadastrar-novoPet")
+    public ModelAndView cadastrarPet(@PathVariable Long id){
+        ModelAndView cadastrarPetMv = new ModelAndView("animalEstimacao/cadastrarPet");    
         cadastrarPetMv.addObject("animalEstimacao", new AnimalEstimacao());
+        proprietarioService.retornarProprietario(id);    
         return cadastrarPetMv;
     }
-
-    // @PostMapping("/novoPet")
-    // public ModelAndView salvarPet(AnimalEstimacao pet){
-    //     ModelAndView salvarNovoPetMv = new ModelAndView("redirect:animalEstimacao/cadastrarPet");
-    //     animalEstimacaoService.salvar(pet);
-    //     return salvarNovoPetMv;
-    // }
-
-    @PostMapping("/novoPet")
-    public String salvarPet(@ModelAttribute("animalEstimacao") AnimalEstimacao animalEstimacao, @RequestParam("proprietarioId") Long prorpietarioId){
-        Proprietario proprietarioAnimalEstimacao= new Proprietario();
-        proprietarioAnimalEstimacao.setId(prorpietarioId);
-        animalEstimacao.setProprietarioPet(proprietarioAnimalEstimacao);
-
-        animalEstimacaoService.salvar(animalEstimacao);
-        return "redirect:/";
+   
+    @PostMapping("/{id}/cadastrar-novoPet")
+    public ModelAndView salvarPet(AnimalEstimacao animalEstimacao, @PathVariable Long id){
+       ModelAndView savarNovoPetMv= new ModelAndView("redirect:animalEstimacao/cadastrarPet");// a ideia é redirecionar para esta view
+       animalEstimacaoService.salvar(animalEstimacao, id);       
+        return savarNovoPetMv;
     }
-
-
-
-
-
 
 }

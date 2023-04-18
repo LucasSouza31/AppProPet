@@ -1,7 +1,5 @@
 package com.projeto.propet.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +17,9 @@ public class EnderecoService {
     @Autowired
     private ProprietarioRepository proprietarioRepository;
 
-
     public void salvar(Endereco endereco, Long id){
         Proprietario proprietario= proprietarioRepository.getReferenceById(id);
-
-        if(proprietario.getEnderecoProprietario()!= null){
-            throw new IllegalArgumentException("Já possui endereço cadastrado s");
-        }
-
+        if(proprietario.getEnderecoProprietario()!= null){ throw new IllegalArgumentException("Já possui endereço cadastrado s"); }
         proprietario.setEnderecoProprietario(endereco);        
         enderecoRepository.save(endereco);
     }

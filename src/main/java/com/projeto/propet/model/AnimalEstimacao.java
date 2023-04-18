@@ -1,7 +1,6 @@
 package com.projeto.propet.model;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +30,7 @@ public class AnimalEstimacao {
     
     private String nomePet;
 
-    private Date dataNascimentoPet;
+    private LocalDate dataNascimentoPet;
 
    @OneToOne(mappedBy = "animalEstimacao")
     private CartaoVacinaPet cartaoVacina;
