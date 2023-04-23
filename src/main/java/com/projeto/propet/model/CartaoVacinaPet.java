@@ -1,6 +1,7 @@
 package com.projeto.propet.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -13,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 
 
@@ -35,6 +37,9 @@ public class CartaoVacinaPet {
     private int DiasProximaVacina;
 
     private String sexoAnimal;
+    
+    @OneToMany(mappedBy = "cartaoVacina")
+    private List<Vacina> vacinaPet;
 
     @OneToOne
     @JoinColumn(name="animal_estimacao_id")

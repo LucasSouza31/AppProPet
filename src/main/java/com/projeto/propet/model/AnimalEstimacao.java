@@ -44,11 +44,5 @@ public class AnimalEstimacao {
     private  Proprietario proprietarioPet;
 
 
-    
-
-     
-
-
-
 
 }

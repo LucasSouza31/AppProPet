@@ -4,7 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,30 +17,23 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "endereco")
-public class Endereco {
-
+@Table(name="vacina")
+public class Vacina {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomeRua;
+    private String nome;
 
-    private String numeroCasa;
+    private String lote;
 
-    private String nomeCidade;
+    private String fabricante;
 
-    private String nomeEstado;
+    private String TipoVacina;
 
-    private String nomePais;
+    @ManyToOne
+    @JoinColumn(name = "vacina_id")
+    private CartaoVacinaPet cartaoVacina;
 
-    private String cepRua;
-
-    @OneToOne (mappedBy ="enderecoProprietario")    
-    private Proprietario proprietario;
-
-
-    
-    
 }

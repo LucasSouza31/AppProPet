@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projeto.propet.model.AnimalEstimacao;
-import com.projeto.propet.model.Proprietario;
 import com.projeto.propet.services.AnimalEstimacaoService;
 import com.projeto.propet.services.ProprietarioService;
 
