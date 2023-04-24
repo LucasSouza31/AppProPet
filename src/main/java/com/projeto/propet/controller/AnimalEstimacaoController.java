@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projeto.propet.model.AnimalEstimacao;
+import com.projeto.propet.model.TipoAnimal;
 import com.projeto.propet.services.AnimalEstimacaoService;
 import com.projeto.propet.services.ProprietarioService;
 
@@ -27,13 +28,14 @@ public class AnimalEstimacaoController {
     public ModelAndView cadastrarPet(@PathVariable Long id){
         ModelAndView cadastrarPetMv = new ModelAndView("animalEstimacao/cadastrarPet");    
         cadastrarPetMv.addObject("animalEstimacao", new AnimalEstimacao());
+        cadastrarPetMv.addObject("petProprietario", TipoAnimal.values());
         proprietarioService.retornarProprietario(id);    
         return cadastrarPetMv;
     }
    
     @PostMapping("/{id}/cadastrar-novoPet")
     public ModelAndView salvarPet(AnimalEstimacao animalEstimacao, @PathVariable Long id){
-       ModelAndView savarNovoPetMv= new ModelAndView("redirect:animalEstimacao/cadastrarPet");// a ideia é redirecionar para esta view
+       ModelAndView savarNovoPetMv= new ModelAndView("redirect:/proprietarios/listar");// a ideia é redirecionar para esta view
        animalEstimacaoService.salvar(animalEstimacao, id);       
         return savarNovoPetMv;
     }
