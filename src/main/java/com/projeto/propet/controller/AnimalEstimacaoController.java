@@ -35,7 +35,7 @@ public class AnimalEstimacaoController {
    
     @PostMapping("/{id}/cadastrar-novoPet")
     public ModelAndView salvarPet(AnimalEstimacao animalEstimacao, @PathVariable Long id){
-       ModelAndView savarNovoPetMv= new ModelAndView("redirect:/proprietarios/listar");// a ideia é redirecionar para esta view
+       ModelAndView savarNovoPetMv= new ModelAndView("redirect:/proprietarios/listar");
        animalEstimacaoService.salvar(animalEstimacao, id);       
         return savarNovoPetMv;
     }

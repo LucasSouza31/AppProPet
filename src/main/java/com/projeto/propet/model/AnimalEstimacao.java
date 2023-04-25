@@ -2,6 +2,8 @@ package com.projeto.propet.model;
 
 import java.time.LocalDate;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,7 +36,8 @@ public class AnimalEstimacao {
 
    @OneToOne(mappedBy = "animalEstimacao")
     private CartaoVacinaPet cartaoVacina;
-
+    
+    @Enumerated(EnumType.STRING)
     private TipoAnimal tipoAnimal;
 
     private String raçaAnimal;
