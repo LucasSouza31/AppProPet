@@ -18,19 +18,17 @@
                         <label for="nomePet" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nomePet" placeholder="Ex: Cenoura"  th:field="*{nomePet}">                    
                     </div>               
+                    <div class="col-md-4">
+                        <label class="form-label">Tipo de animal</label>
+                        <select th:field="*{tipoAnimal}"  class="form-select">
+                        <option th:each="tipoAnimal : ${petProprietario}" th:value="${tipoAnimal}" th:text="${tipoAnimal}"> Ave </option>
+                        </select>
+                    </div>
                     <div class="col-md-auto">
                             <label for="dataNascimentoPet" class="form-label">Data de Nascimento</label>
                             <input type="date" class="form-control" id="dataNascimentoPet" placeholder="Ex: 29/04/2020" th:field="*{dataNascimentoPet}">                    
                     </div>
 
-                    <div class="col-md-auto col-md-4 ">
-                        <label>Tipo de animal</label>
-                        <select th:field="*{tipoAnimal}"  class="form-select">
-
-                        <option th:each="tipoAnimal : ${petProprietario}" th:value="${tipoAnimal}" th:text="${tipoAnimal}"> Ave </option>
-
-                        </select>
-                    </div>
 
                     <div class="col-md-auto col-md-4 md-4">
                         <label for="raçaAnimal" class="form-label">Raça</label>

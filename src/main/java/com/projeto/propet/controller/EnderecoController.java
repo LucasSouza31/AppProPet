@@ -34,7 +34,7 @@ public class EnderecoController {
 
     @PostMapping("/{id}/cadastrar-endereco")
     public ModelAndView salvarEndereco( Endereco endereco, @PathVariable Long id) {
-        ModelAndView salvarEnderecoMv= new ModelAndView("redirect:/endereco/cadastrarEndereco");             
+        ModelAndView salvarEnderecoMv= new ModelAndView("redirect:proprietarios/listar");             
         enderecoService.salvar(endereco, id);
         return salvarEnderecoMv;
     }
