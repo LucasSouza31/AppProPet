@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6 mt-5">
+
+                <h4>Selecione uma opção</h4>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Novo
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form method="post" th:object="${vacina}">
+                                    
+                                    <div class="row ">
+
+                                        <div class="row mb-3">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" id="nome" class="form-control" placeholder="Antirrábica"
+                                                aria-label="Antirrábica" th:field="*{nome}">
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="lote" class="form-label">Lote</label>
+                                            <input type="text" class="form-control" placeholder="L0012023"
+                                                aria-label="L0012023" th:field="*{lote}">
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="lote" class="form-label">Fabricante</label>
+                                            <input type="text" class="form-control" placeholder="Moderna"
+                                            aria-label="Moderna" th:field="*{fabricante}">
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-5">Salvar</button>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-5">
+                <h3>Atenção!</h3>
+                <p>
+                    Aqui serão cadastrados as vacinas que serão aplicadas nos animais de estimação!
+                    Caso o pet esteja muito exposto aos agentes exeternos, ou seja, precise ficar em um hotel para pets
+                    ou viajar constantemente com o tutor, a <strong> primeira vacina do cachorro</strong>
+                    pode ser aplicada com até quatro semana de vida.
+                </p>
+                <p>
+                    Para pets que não têm tanta exposição, o protocolo de vacina pode começar entre seis a oito semanas
+                    de idade. Neste caso, as vacinas mais necessárias são a
+                    <strong>Antirrábica</strong> e <strong>leishmaniose</strong>. Cuide de seu pet!
+                </p>
+            </div>
+
+            <footer th:replace="~{fragmentos/rodape::rodape}"> </footer>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <footer th:replace="~{fragmentos/rodape::rodape}"> </footer>
+
+</body>
+
+</html>

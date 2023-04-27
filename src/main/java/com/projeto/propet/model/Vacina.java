@@ -29,8 +29,7 @@ public class Vacina {
     private String lote;
 
     private String fabricante;
-
-    private String TipoVacina;
+   
 
     @ManyToOne
     @JoinColumn(name = "vacina_id")
