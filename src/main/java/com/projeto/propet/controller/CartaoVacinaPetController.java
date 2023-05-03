@@ -3,9 +3,11 @@ package com.projeto.propet.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.projeto.propet.model.Vacina;
 import com.projeto.propet.services.AnimalEstimacaoService;
 import com.projeto.propet.services.CartaoVacinaPetService;
 import com.projeto.propet.services.VacinaService;
@@ -25,9 +27,25 @@ public class CartaoVacinaPetController {
     private VacinaService vacinaService;
 
     @GetMapping
-    public ModelAndView inserirVacina() {
+    public ModelAndView inserirVacina(Long petId) {
         ModelAndView mv = new ModelAndView("cartaopet/inserirVacina");
-        mv.addObject("vacina", vacinaService.buscarVacina());
+        mv.addObject("vacina", vacinaService.buscarVacina()); // escolher vacina
+        mv.addObject("nomeDoPet", animalEstimacaoService.encontrarPetEspecifico(petId)); // mostrar o pet e que vacina vai receber
         return mv;  
     }
+
+    @PostMapping
+    public ModelAndView salvarVacinaNoCartao(Vacina vacina, Long petId) {
+        ModelAndView mv = new ModelAndView();
+        
+
+
+        return mv;
+    }
+
+
+
+
+
+
 }

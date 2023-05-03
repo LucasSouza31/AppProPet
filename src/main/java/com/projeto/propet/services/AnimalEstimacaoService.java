@@ -22,5 +22,9 @@ public class AnimalEstimacaoService {
         pet.setProprietarioPet(proprietario);
         animalEstimacaoRepository.save(pet);
     }
+
+    public AnimalEstimacao encontrarPetEspecifico(Long petId) {
+        return animalEstimacaoRepository.getReferenceById(petId);
+    }
     
 }
