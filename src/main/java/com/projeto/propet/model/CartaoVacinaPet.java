@@ -1,6 +1,6 @@
 package com.projeto.propet.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.OneToOne;
@@ -30,13 +30,11 @@ public class CartaoVacinaPet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String nomeVacina;
+    //private String nomeVacina;
 
-    private Date dataVacina;
+    private LocalDate dataVacina;
 
-    private int DiasProximaVacina;
-
-    private String sexoAnimal;
+    private int proximaDose;    
     
     @OneToMany(mappedBy = "cartaoVacina")
     private List<Vacina> vacinaPet;

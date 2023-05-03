@@ -1,5 +1,7 @@
 package com.projeto.propet.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,14 @@ public class VacinaService {
 
     public void salvar(Vacina vacina) {
         vacinaRepository.save(vacina);
+    }
+
+    // public ArrayList<Vacina> buscarVacina() {
+    //      return (ArrayList<Vacina>) vacinaRepository.findAll();
+    // }
+
+    public List<Vacina> buscarVacina() {
+        return vacinaRepository.findAll();
     }
     
 }

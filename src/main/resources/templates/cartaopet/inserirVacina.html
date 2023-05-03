@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+    
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+        <div>
+            <form action="">
+                <div class="mb-3">
+                    <label for="" class="form-label">Nome do Pet</label>
+                    <input type="text" class="form-control"  placeholder="Bob">                  
+                </div>
+
+                <!-- Receber uma lista de vacinas que foram cadastradas -->
+                <select class="form-select" aria-label="Default select example">
+                    <option selected> Escolher a vacina </option>                    
+                </select>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Data de aplicação</label>
+                  <input type="date" class="form-control"  placeholder="03/05/2023">                  
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Próxima dose</label>
+                    <input type="date" class="form-control"  placeholder="28/05/2023">                  
+                </div>
+                
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+    <footer th:replace="~{fragmentos/rodape::rodape}"> </footer>
+
+</body>
+</html>

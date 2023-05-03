@@ -42,6 +42,8 @@ public class AnimalEstimacao {
 
     private String raçaAnimal;
 
+    private String sexoAnimal;
+
     @ManyToOne
     @JoinColumn(name="proprietario_id")
     private  Proprietario proprietarioPet;
