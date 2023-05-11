@@ -40,7 +40,7 @@ public class AnimalEstimacao {
     @Enumerated(EnumType.STRING)
     private TipoAnimal tipoAnimal;
 
-    private String raçaAnimal;
+    private String racaAnimal;
 
     private String sexoAnimal;
 

@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.projeto.propet.model.AnimalEstimacao;
 import com.projeto.propet.model.Proprietario;
 import com.projeto.propet.repository.ProprietarioRepository;
 
@@ -27,5 +28,9 @@ public class ProprietarioService {
        return  proprietarioRepository.getReferenceById(id);       
     }
 
+    public List<AnimalEstimacao> listarPets(Long id) {
+        Proprietario proprietario= retornarProprietario(id);
+        return proprietario.getPetsProprietario();
+    }
 
 }

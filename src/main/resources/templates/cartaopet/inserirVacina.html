@@ -8,16 +8,16 @@
     <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
 
         <div>
-            <form action="">
+            <form  th:object="${cartaoVacinaPet}" method="post">
 
                 <!-- vai receber o nome do pet que vai receber a vacina -->
                 <div class="mb-3">
-                    <label for="" class="form-label">Nome do Pet</label>                                     
+                    <label class="form-label" th:text="${nomeDoPet}">Nome do Pet</label>                                     
                 </div>
 
                 <!-- Receber uma lista de vacinas que foram cadastradas -->
-                <select class="form-select" aria-label="Default select example">
-                    <option selected> Escolher a vacina </option>                    
+                <select class="form-select"  th:field="*{vacinaPet}">
+                    <option th:each="vacina : ${vacina}" th:value="vacina" th:text="${vacina}"> Escolher a vacina </option>                    
                 </select>
 
                 <div class="mb-3">

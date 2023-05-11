@@ -34,7 +34,7 @@ public class CartaoVacinaPet {
 
     private LocalDate dataVacina;
 
-    private int proximaDose;    
+    private LocalDate proximaDose;    
     
     @OneToMany(mappedBy = "cartaoVacina")
     private List<Vacina> vacinaPet;

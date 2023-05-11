@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+
+    <div class="jumbotrom">
+        <div class="container">
+            <div class="row">
+
+                <table class="table mt-5">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Raça</th>
+                        <th scope="col">Sexo</th>                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr th:each=" pet: ${petDosProprietarios}">
+                        <th scope="row" th:text="${proprietario.id}">1</th>
+                        <td th:text="${pet.nomePet}">Jubileu</td>
+                        <td th:text="${pet.racaAnimal}">Siames</td>
+                        <td th:text="${pet.sexoAnimal}">Masculino</td>
+
+                        <td>                          
+                            <a th:href="@{/endereco/{id}/cadastrar-endereco (id=${proprietario.id})} " class="btn btn-warning" role="button">Vacinar</a>
+                        </td>                                
+
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer th:replace="~{fragmentos/rodape::rodape}"> </footer>
+
+  
+
+
+</body>
+</html>

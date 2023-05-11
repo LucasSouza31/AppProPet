@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projeto.propet.model.AnimalEstimacao;
+import com.projeto.propet.model.Proprietario;
 import com.projeto.propet.model.TipoAnimal;
 import com.projeto.propet.services.AnimalEstimacaoService;
 import com.projeto.propet.services.ProprietarioService;
@@ -38,6 +39,14 @@ public class AnimalEstimacaoController {
        ModelAndView savarNovoPetMv= new ModelAndView("redirect:/proprietarios/listar");
        animalEstimacaoService.salvar(animalEstimacao, id);       
         return savarNovoPetMv;
+    }
+
+    @GetMapping("/{id}/listar-pets")
+    public ModelAndView listarPetPorProprietario(@PathVariable("id") Long proprietarioId) {
+        ModelAndView mv = new ModelAndView("animalEstimacao/listarPet");
+        mv.addObject("petDosProprietarios", proprietarioService.listarPets(proprietarioId));
+                
+        return mv;
     }
 
 }
