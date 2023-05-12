@@ -22,14 +22,14 @@
                     </thead>
                     <tbody>
                       <tr th:each=" pet: ${petDosProprietarios}">
-                        <th scope="row" th:text="${proprietario.id}">1</th>
+                         <th scope="row" th:text="${pet.id}">1</th> 
                         <td th:text="${pet.nomePet}">Jubileu</td>
                         <td th:text="${pet.racaAnimal}">Siames</td>
                         <td th:text="${pet.sexoAnimal}">Masculino</td>
 
                         <td>                          
-                            <a th:href="@{/endereco/{id}/cadastrar-endereco (id=${proprietario.id})} " class="btn btn-warning" role="button">Vacinar</a>
-                        </td>                                
+                            <a th:href="@{/cartao-vacina/{id} (id=${pet.id})} " class="btn btn-warning" role="button">Vacinar</a> 
+                        </td>                               
 
                       </tr>
                     </tbody>

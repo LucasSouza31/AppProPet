@@ -9,6 +9,9 @@
     <section class="jumbotron">
         <div class="container mt-5">
             <h3>Novo Pet</h3>
+            <div class="col col-md-4">
+                <label th:text="${proprietario}">Nome do proprietário</label>
+            </div> 
     
             <form  th:object="${animalEstimacao}"  method="post">    
                 <div class="row mt-5">
