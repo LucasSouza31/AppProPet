@@ -18,10 +18,6 @@ public class VacinaService {
         vacinaRepository.save(vacina);
     }
 
-    // public ArrayList<Vacina> buscarVacina() {
-    //      return (ArrayList<Vacina>) vacinaRepository.findAll();
-    // }
-
     public List<Vacina> buscarVacina() {
         return vacinaRepository.findAll();
     }

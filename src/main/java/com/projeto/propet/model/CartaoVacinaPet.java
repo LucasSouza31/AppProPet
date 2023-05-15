@@ -3,6 +3,9 @@ package com.projeto.propet.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -32,8 +35,10 @@ public class CartaoVacinaPet {
     
     //private String nomeVacina;
 
+    @DateTimeFormat(iso = ISO.DATE)
     private LocalDate dataVacina;
 
+    @DateTimeFormat(iso = ISO.DATE)
     private LocalDate proximaDose;    
     
     @OneToMany(mappedBy = "cartaoVacina")

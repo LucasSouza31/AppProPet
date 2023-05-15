@@ -31,7 +31,7 @@ public class CartaoVacinaPetController {
     @GetMapping("/{id}")
     public ModelAndView aplicarVacina(@PathVariable("id") Long petId) {
         ModelAndView mv = new ModelAndView("cartaopet/inserirVacina");
-        mv.addObject("cartaoVacina", new CartaoVacinaPet());          
+        mv.addObject("cartaoVacinaPet", new CartaoVacinaPet());  
         mv.addObject("vacina", vacinaService.buscarVacina()); // escolher vacina
         mv.addObject("nomeDoPet", animalEstimacaoService.encontrarPetEspecifico(petId).getNomePet()); // mostrar o pet e que vacina vai receber
         return mv;  
@@ -39,15 +39,9 @@ public class CartaoVacinaPetController {
 
     @PostMapping("/{id}")
     public ModelAndView salvarVacinaNoCartao(CartaoVacinaPet cartao, @PathVariable("id") Long petId) {
-        ModelAndView mv = new ModelAndView("redirect:proprietario/listarProprietario"); 
-        
+        ModelAndView mv = new ModelAndView("redirect:proprietario/listarProprietario");         
         cartaoVacinaPetService.salvar(cartao);
         return mv;
     }
-
-
-
-
-
 
 }

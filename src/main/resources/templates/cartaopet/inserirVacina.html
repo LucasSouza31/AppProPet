@@ -10,25 +10,25 @@
         <div class="container">
             <div class="mt-4">
                 <form  th:object="${cartaoVacinaPet}" method="post">
-
+                    <input type="hidden" th:field="*{id}">
                     <!-- vai receber o nome do pet que vai receber a vacina -->
                     <div class="mb-3 mt-4">
                         <label class="form-label" th:text="${nomeDoPet}">Nome do Pet</label>                                     
                     </div>
     
                     <!-- Receber uma lista de vacinas que foram cadastradas -->
-                    <select class="form-select"  >
-                        <option th:each="vacina : ${vacina}" th:value="vacinaPet" th:text="${vacinaPet}"> Escolher a vacina </option>                    
+                    <select class="form-select" th:field="*{vacinaPet}" >
+                        <option th:each="vacina : ${vacina}" th:value="vacina" th:text="${vacina.nome}"> Escolher a vacina </option>                    
                     </select>
     
                     <div class="mb-3 mt-4">
                       <label for="" class="form-label">Data de aplicação</label>
-                      <input type="date" class="form-control"  placeholder="03/05/2023">                  
+                      <input type="date" class="form-control"  placeholder="03/05/2023" th:field="*{dataVacina}">                  
                     </div>
     
                     <div class="mb-3 mt-4">
                         <label for="" class="form-label">Próxima dose</label>
-                        <input type="date" class="form-control"  placeholder="28/05/2023">                  
+                        <input type="date" class="form-control"  placeholder="28/05/2023" th:field="*{proximaDose}">                  
                     </div>
                     
                     <button type="submit" class="btn btn-success mt-4"> Cadastrar </button>
