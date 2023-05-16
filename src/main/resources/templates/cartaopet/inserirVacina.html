@@ -9,16 +9,17 @@
 
         <div class="container">
             <div class="mt-4">
-                <form  th:object="${cartaoVacinaPet}" method="post">
-                    <input type="hidden" th:field="*{id}">
                     <!-- vai receber o nome do pet que vai receber a vacina -->
-                    <div class="mb-3 mt-4">
-                        <label class="form-label" th:text="${nomeDoPet}">Nome do Pet</label>                                     
-                    </div>
-    
+                <div class="mb-3 mt-4">
+                    <label class="form-label" th:text="${nomeDoPet}">Nome do Pet</label>                                     
+                </div>
+
+                <form  th:object="${cartaoVacinaPet}" method="post">
+                    <input type="hidden" th:field="*{id}">                    
+                    
                     <!-- Receber uma lista de vacinas que foram cadastradas -->
                     <select class="form-select" th:field="*{vacinaPet}" >
-                        <option th:each="vacina : ${vacina}" th:value="vacina" th:text="${vacina.nome}"> Escolher a vacina </option>                    
+                        <option th:each="vacina : ${vacina}" th:value="${vacina.id}" th:text="${vacina.nome}"> Escolher a vacina </option>                    
                     </select>
     
                     <div class="mb-3 mt-4">
