@@ -32,7 +32,7 @@ public class Vacina {
    
 
     @ManyToOne
-    @JoinColumn(name = "vacina_id")
+    @JoinColumn(name = "cartaoVacina_id_fk")
     private CartaoVacinaPet cartaoVacina;
 
 }

@@ -45,7 +45,7 @@ public class CartaoVacinaPet {
     private List<Vacina> vacinaPet;
 
     @OneToOne
-    @JoinColumn(name="animal_estimacao_id")
+    @JoinColumn(name="animal_estimacao_id_fk")
     private AnimalEstimacao animalEstimacao;
 
 }

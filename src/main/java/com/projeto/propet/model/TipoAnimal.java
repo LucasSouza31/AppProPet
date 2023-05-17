@@ -1,5 +1,5 @@
 package com.projeto.propet.model;
 
 public enum TipoAnimal {
-    Ave, Felino, Canino, Exótico;
+    Ave, Felino, Canino, Exótico, Réptil;
 }

@@ -8,7 +8,7 @@ public class HomeController {
     
     @GetMapping("/")
     public String home() {
-        return "proprietarios/listar";
+        return "proprietario/listarProprietarios";
     }
 
 

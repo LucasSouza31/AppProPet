@@ -45,7 +45,7 @@ public class AnimalEstimacao {
     private String sexoAnimal;
 
     @ManyToOne
-    @JoinColumn(name="proprietario_id")
+    @JoinColumn(name="proprietario_id_fk")
     private  Proprietario proprietarioPet;
 
 

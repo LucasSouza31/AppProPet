@@ -39,7 +39,7 @@ public class Proprietario {
     private String telefoneProprietario;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="endereco_id")
+    @JoinColumn(name="endereco_id_fk")
     private Endereco enderecoProprietario;
 
     @OneToMany(mappedBy="proprietarioPet")    
