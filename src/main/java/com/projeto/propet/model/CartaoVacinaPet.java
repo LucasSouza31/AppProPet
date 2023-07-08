@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -41,7 +42,7 @@ public class CartaoVacinaPet {
     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate proximaDose;    
     
-    @OneToMany(mappedBy = "cartaoVacina")
+    @OneToMany(mappedBy = "cartaoVacina", cascade = CascadeType.ALL)
     private List<Vacina> vacinaPet;
 
     @OneToOne
