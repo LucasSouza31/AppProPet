@@ -25,11 +25,19 @@ public class CartaoVacinaPetService {
 
     public void salvar(CartaoVacinaPet cartao, Long petId, Long vacinaId) {
         AnimalEstimacao pet = animalEstimacaoRepository.getReferenceById(petId);
-        Vacina vacina = vacinaRepository.getReferenceById(vacinaId);
+        Vacina vacina = vacinaRepository.getReferenceById(vacinaId);       
         vacina.setCartaoVacina(cartao);
         cartao.setAnimalEstimacao(pet);
         cartaoVacinaRepository.save(cartao);
     }
 
+  
+    public CartaoVacinaPet buscarCartaoVacinaPetPorId(Long petId){
+     return animalEstimacaoRepository.getReferenceById(petId).getCartaoVacina();          
+    }
+    
+    // public CartaoVacinaPet buscarCartaoVacinaPetPorId(Long petId) {
+    //     return cartaoVacinaRepository.findPetById(petId);
+    // }
 
 }

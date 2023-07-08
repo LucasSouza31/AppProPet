@@ -8,5 +8,6 @@ import com.projeto.propet.model.Vacina;
 public interface CartaoVacinaRepository extends JpaRepository<CartaoVacinaPet, Long>{
 
     void save(Vacina vacina);
+  
     
 }

@@ -20,6 +20,7 @@ public class VacinaService {
 
     public List<Vacina> buscarVacina() {
         return vacinaRepository.findAll();
+        
     }
     
 }

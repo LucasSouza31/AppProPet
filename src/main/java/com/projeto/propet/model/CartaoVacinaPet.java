@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,18 +34,20 @@ public class CartaoVacinaPet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    //private String nomeVacina;
-
+      
+    @Column(name = "primeira_dose")
     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate dataVacina;
 
+    @Column(name = "proxima_dose")
     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate proximaDose;    
     
+    @Column(name = "vacinas")
     @OneToMany(mappedBy = "cartaoVacina", cascade = CascadeType.ALL)
-    private List<Vacina> vacinaPet;
+    private List<Vacina> vacinas;
 
+   
     @OneToOne
     @JoinColumn(name="animal_estimacao_id_fk")
     private AnimalEstimacao animalEstimacao;

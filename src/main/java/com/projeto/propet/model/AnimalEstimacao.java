@@ -1,6 +1,8 @@
 package com.projeto.propet.model;
 
 import java.time.LocalDate;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,8 +32,10 @@ public class AnimalEstimacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name = "nome")
     private String nomePet;
 
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimentoPet;
 
    @OneToOne(mappedBy = "animalEstimacao")
@@ -40,8 +44,10 @@ public class AnimalEstimacao {
     @Enumerated(EnumType.STRING)
     private TipoAnimal tipoAnimal;
 
+    @Column(name = "raca")
     private String racaAnimal;
 
+    @Column(name = "sexo")
     private String sexoAnimal;
 
     @ManyToOne
