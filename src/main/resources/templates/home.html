@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{fragmentos/cabecalho::cabecalho}">Cabecalho</head>
+
+<body>
+
+    <div th:replace="~{fragmentos/barraNavegacao::navbar}">Barra de navegacao</div>
+
+    <div class="container mt-5">
+        <!-- Proprietários -->
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Aqui você obtêm as informações sobre os proprietários</p>
+            </div>
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Proprietário
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Listar</a></li>                  
+                    <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                </div>
+            </div>                    
+        </div>
+
+        <!-- Animais -->
+        <div class="row mt-5">
+            <div class="col-sm-8">
+                <p>Aqui você obtêm as informações sobre os animais</p>
+            </div>
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Animais
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Listar</a></li>
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Vacinas -->
+        <div class="row mt-5">
+            <div class="col-sm-8">
+                <p>Aqui você obtêm as informações sobre as vacinas</p>
+            </div>
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Vacinas
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Listar</a></li>
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+
+    <footer th:replace="~{fragmentos/rodape::rodape}"> </footer>
+
+</body>
+
+</html>
