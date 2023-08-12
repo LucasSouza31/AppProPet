@@ -38,7 +38,8 @@ public class AnimalEstimacao {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimentoPet;
 
-   @OneToOne(mappedBy = "animalEstimacao")
+    @OneToOne(mappedBy = "animalEstimacao")
+    @JoinColumn(name = "cartao_vacina_id_fk")
     private CartaoVacinaPet cartaoVacina;
     
     @Enumerated(EnumType.STRING)
